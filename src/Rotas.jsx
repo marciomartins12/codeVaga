@@ -1,5 +1,5 @@
 
-function App() {
+function Rotas() {
 
   return (
     <>
@@ -8,4 +8,4 @@ function App() {
   )
 }
 
-export default App
+export default Rotas
