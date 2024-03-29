@@ -1,0 +1,20 @@
+[
+    {
+        "nome": "Fogo e Brasa",
+        "email": "fogoebrasa@gmail.com",
+        "id": 1,
+        "senha": "123fogonosracistas",
+        "cnpj": "123/1231-212",
+        "descircaoRestaurante": "Bem-vindo à ! Aqui, ingredientes frescos e sabores  autênticos se encontram. Explore nossa seleção gourmet e desfrute de  pratos preparados na hora. Uma experiência gastronômica única espera por  você!",
+        "localização": "Alamedas 4"
+    },
+    {
+        "nome": "Pastel de Flango",
+        "email": "pasteldeflango@gmail.com",
+        "id": 2,
+        "senha": "123flango",
+        "cnpj": "123/1231-212",
+        "descircaoRestaurante": "Bem-vindo à ! Aqui, ingredientes frescos e sabores  autênticos se encontram. Explore nossa seleção gourmet e desfrute de  pratos preparados na hora. Uma experiência gastronômica única espera por  você!",
+        "localização": "Alamedas 2"
+    }
+]
