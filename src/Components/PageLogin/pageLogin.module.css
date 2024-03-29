@@ -35,13 +35,13 @@
 .containerPageLogin input {
     border-radius: 0.3em;
     border: 1px solid rgb(246, 206, 206);
-    padding: .56 em;
+    padding: .56em;
 }
 
 .btn {
     background-color: rgb(232, 232, 232);
     border: none;
-    padding: 0.33em .75em;
+    padding: 0.33em 1em;
     font-size: 1.5em;
     border-radius: .25em;
 }
