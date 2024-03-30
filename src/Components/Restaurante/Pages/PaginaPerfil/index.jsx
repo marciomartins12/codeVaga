@@ -1,33 +1,45 @@
 import { Link, useNavigate } from "react-router-dom";
 import Style from "./paginaPerfil.module.css";
 import Restaurantes from "../../../../Services/restauranteUsuario.json";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const RestaurantePerfil = ({id}) => {
+const RestaurantePerfil = ({ id }) => {
     const navigate = useNavigate();
+    const [user, setUser] = useState();
+    useEffect(() => {
+        if (id == null) {
+            navigate("/");
+        }
+
+    }, [])
 
     useEffect(() => {
         const restaurante = Restaurantes.find((e) => e.id == id);
         if (restaurante) {
-            if (restaurante.email === JSON.parse(localStorage.getItem("userCurrent")).email) {
-                if (restaurante.email === JSON.parse(localStorage.getItem("userCurrent")).senha) {
+            if (restaurante.email == JSON.parse(localStorage.getItem("userCurrent")).email) {
+                if (restaurante.email == JSON.parse(localStorage.getItem("userCurrent")).senha) {
+                    setUser(restaurante)
+
+                } else {
                     window.localStorage.clear();
                     navigate('/');
                 }
             }
+        } else {
+            window.localStorage.clear();
+            navigate('/');
         }
     }, [])
-    const restaurante = Restaurantes.find((e) => e.email === JSON.parse(localStorage.getItem("userCurrent")).email)
 
     return (
         <section className={Style.containerPerfil}>
             <div className={Style.cabecalhoperfil}>
                 <div className={Style.cabecalhoperfilItem}>
-                    <h2>{restaurante.nome}</h2>
+                    <h2>{user.nome}</h2>
                     <img src="" alt="" />
                 </div>
                 <div className={Style.cabecalhoperfilItem}>
-                    <p>Avaliações : {restaurante.avaliacao}</p>
+                    <p>Avaliações : {user.avaliacao}</p>
                     <p>Cardapio :  </p>
                 </div>
             </div>

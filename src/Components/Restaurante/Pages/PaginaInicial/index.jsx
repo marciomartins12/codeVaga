@@ -6,12 +6,18 @@ import Restaurantes from "../../../../Services/restauranteUsuario.json";
 
 const PaginaRestaurante = ({ id }) => {
     const navigate = useNavigate();
- 
+    useEffect(() => {
+        if (id == null) {
+            navigate("/");
+        }
+
+    }, [])
     useEffect(() => {
        const restaurante =  Restaurantes.find((e)=> e.id == id);
+       console.log(restaurante)
        if(restaurante){
              if(restaurante.email === JSON.parse(localStorage.getItem("userCurrent")).email){
-                if(restaurante.email === JSON.parse(localStorage.getItem("userCurrent")).senha){
+                if(!restaurante.email === JSON.parse(localStorage.getItem("userCurrent")).senha){
                     window.localStorage.clear();  
                     navigate('/');
                 }
@@ -20,16 +26,11 @@ const PaginaRestaurante = ({ id }) => {
     }, [])
 
 
-    useEffect(() => {
-        if (id == null) {
-            navigate("/");
-        }
-
-    }, [])
+  
     return (
         <div className={Styles.container}>
             <nav className={Styles.cabecalho}>
-                <h2>aaa</h2>
+                <h2>Restaurante</h2>
                 <button onClick={() => {
                     window.localStorage.clear()
                 }}>Sair</button>
