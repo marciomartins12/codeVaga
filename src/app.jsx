@@ -1,8 +1,9 @@
 import HomePage from './Components/HomePage'
 import { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom'
 import PageLogin from './Components/PageLogin'
 import PaginaRestaurante from './Components/Restaurante/Pages/PaginaInicial'
+import RestaurantePerfil from './Components/Restaurante/Pages/PaginaPerfil'
 
 
 const App = () => {
@@ -30,21 +31,16 @@ const App = () => {
           } />
 
           {/* homepage restaurante */}
-          <Route path='/homepagerestaurante' element={
-            <PaginaRestaurante
-              id={user}
-            />
-          }>
-
-
-
-
+          <Route path='/homepagerestaurante' element={<PaginaRestaurante id={user} />}>
+            <Route path='perfil' element={<RestaurantePerfil />} />
+            <Route path='cardapio' element={<RestaurantePerfil />} />
+            <Route path='pedidos' element={<RestaurantePerfil />} />
           </Route>
 
 
         </Routes>
       </BrowserRouter>
-     
+
     </div>
   )
 }

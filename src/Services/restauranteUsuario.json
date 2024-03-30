@@ -6,6 +6,7 @@
         "descricao": "Restaurante que vende comida",
         "cnpj": "787213=3213/31",
         "localizacao": "Rua dos Corvos - 1/12",
+        "avaliacao" : 4.5,
         "cardapio": [
             {
                 "categoria": "Bebidas",
