@@ -1,0 +1,17 @@
+[
+    {
+        "nome": "Fogo e Brasa",
+        "email": "fogoebrasa@gmail.com",
+        "id": 1,
+        "senha": "12345678"
+    },
+    {
+        "nome": "Pastel de Flango",
+        "email": "pasteldeflango@gmail.com",
+        "id": 2,
+        "senha": "123flango"
+    }
+    ,{
+        
+    }
+]

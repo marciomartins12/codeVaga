@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "nome": "Fogo e Brasa",
+        "email": "fogoebrasa@gmail.com",
+        "descricao": "Restaurante que vende comida",
+        "cnpj": "787213=3213/31",
+        "localizacao": "Rua dos Corvos - 1/12",
+        "cardapio": [
+            {
+                "categoria": "Bebidas",
+                "itens": [
+                    { "nome": "Coca-Cola", "valor": 5.0 },
+                    { "nome": "Suco de Laranja", "valor": 4.0 },
+                    { "nome": "Água Mineral", "valor": 3.0 }
+                ]
+            },
+            {
+                "categoria": "Pratos",
+                "itens": [
+                    { "nome": "Pizza Margherita", "valor": 25.0 },
+                    { "nome": "Hambúrguer", "valor": 20.0 },
+                    { "nome": "Salada Caesar", "valor": 15.0 }
+                ]
+            }
+        ]
+    }
+]

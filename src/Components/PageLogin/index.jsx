@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import Style from "./pageLogin.module.css";
-const PageLogin = ({ escolha }) => {
+const PageLogin = ({setid, escolha }) => {
 
     const [json, setJson] = useState(null);
 
@@ -10,7 +11,7 @@ const PageLogin = ({ escolha }) => {
                 let response;
                 let jsonData;
                 if (escolha == "restaurante") {
-                    response = await fetch("src/Services/restaurantes.json");
+                    response = await fetch("src/Services/RestaurantesContas.json");
                     jsonData = await response.json();
                 } else {
                     response = await fetch("src/Services/cliente.json");
@@ -24,16 +25,21 @@ const PageLogin = ({ escolha }) => {
         fetchData();
     }, []);
 
-    const [email, setemail] = useState();
-    const [senha, setsenha] = useState();
+    const [email, setemail] = useState("");
+    const [senha, setsenha] = useState("");
+    const [fal, setfal] = useState(false);
+    const Navigate = useNavigate();
 
     function enviarForm(email, senha) {
-        const pacote = json.find((e) => e.email === email)
+        const pacote = json.find((e) => e.email === email);
+
         if (pacote) {
-            pacote.senha === senha ? console.log("acertou ") : console.log("errou a senha ")
+            pacote.senha === senha ? setid(pacote.id) : ""
+            window.localStorage.setItem("userCurrent",[email, senha])
+            pacote.senha === senha ? Navigate(`${escolha=="restaurante"? "/homepagerestaurante": "/homepagecliente"}`) : setfal(true)
         } else {
 
-            console.log("fuddio")
+            setfal(true);
         }
 
     }
@@ -48,7 +54,7 @@ const PageLogin = ({ escolha }) => {
                     enviarForm(email, senha)
                 }
                 }>
-                <div>
+                <div className={Style.containerinputs}>
                     <img src={`src/Components/assets/icons/${escolha == "restaurante" ? "restaurante" : "pessoa"}.png`} alt="icon restaurantes" />
                     <input onChange={(e) => {
                         setemail(e.target.value)
@@ -59,7 +65,7 @@ const PageLogin = ({ escolha }) => {
                         required={true}
                     />
                 </div>
-                <div>
+                <div className={Style.containerinputs}>
                     <img src="src/Components/assets/icons/password.png" alt="" />
                     <input
                         onChange={(e) => {
@@ -71,7 +77,9 @@ const PageLogin = ({ escolha }) => {
                         required={true}
                     />
                 </div>
-                    <button className={Style.btn} >Entrar</button>
+                {fal ? <p className={Style.mensagemsenhaerrada}>senha ou email incorreto. Tente novamente.</p> : <></>}
+                <button className={Style.btn} disabled={senha.length >= 8 ? false : true} >Entrar</button>
+                <button className={Style.criarconta}>criar conta</button>
             </form>
         </section>
     )
