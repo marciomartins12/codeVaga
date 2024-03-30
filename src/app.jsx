@@ -2,18 +2,20 @@ import HomePage from './Components/HomePage'
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import PageLogin from './Components/PageLogin'
-import HomepageRestaurante from './Components/Restaurante/Pages'
-const App = ()=>{
-    const [user, setuser] = useState(null);
-    return (
+import PaginaRestaurante from './Components/Restaurante/Pages/PaginaInicial'
 
-        <BrowserRouter>
+
+const App = () => {
+  const [user, setuser] = useState(null);
+  return (
+    <div>
+      <BrowserRouter>
         <Routes>
-  
+
           <Route path='/' element={
             <HomePage />
           } />
-  
+
           <Route path='/PageLoginRestaurante' element={
             <PageLogin
               setid={(e) => setuser(e)}
@@ -26,17 +28,24 @@ const App = ()=>{
               escolha="cliente"
             />
           } />
-  
+
           {/* homepage restaurante */}
           <Route path='/homepagerestaurante' element={
-            <HomepageRestaurante
+            <PaginaRestaurante
               id={user}
             />
-          } />
-  
-  
+          }>
+
+
+
+
+          </Route>
+
+
         </Routes>
       </BrowserRouter>
-    )
+     
+    </div>
+  )
 }
 export default App;
