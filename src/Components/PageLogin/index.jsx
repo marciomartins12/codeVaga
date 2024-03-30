@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Style from "./pageLogin.module.css";
-const PageLogin = ({setid, escolha }) => {
+const PageLogin = ({ setid, escolha }) => {
 
     const [json, setJson] = useState(null);
+    function verificaLog() {
+        const usercurrent = localStorage.getItem("userCurrent")
+        if (usercurrent) {
 
+            const usercurrentjson = JSON.parse(usercurrent)
+            enviarForm(usercurrentjson.email, usercurrentjson.senha)
+        }
+    }
     useEffect(() => {
         async function fetchData() {
             try {
                 let response;
                 let jsonData;
+
                 if (escolha == "restaurante") {
                     response = await fetch("src/Services/RestaurantesContas.json");
                     jsonData = await response.json();
@@ -22,8 +30,15 @@ const PageLogin = ({setid, escolha }) => {
                 console.error("Erro ao carregar JSON:", error);
             }
         }
+
+
         fetchData();
     }, []);
+    useEffect(() => {
+        if (json) {
+            verificaLog();
+        }
+    }, [json]);
 
     const [email, setemail] = useState("");
     const [senha, setsenha] = useState("");
@@ -35,8 +50,8 @@ const PageLogin = ({setid, escolha }) => {
 
         if (pacote) {
             pacote.senha === senha ? setid(pacote.id) : ""
-            window.localStorage.setItem("userCurrent",[email, senha])
-            pacote.senha === senha ? Navigate(`${escolha=="restaurante"? "/homepagerestaurante": "/homepagecliente"}`) : setfal(true)
+            window.localStorage.setItem("userCurrent", JSON.stringify({ email: email, senha: senha }))
+            pacote.senha === senha ? Navigate(`${escolha == "restaurante" ? "/homepagerestaurante" : "/homepagecliente"}`) : setfal(true)
         } else {
 
             setfal(true);
