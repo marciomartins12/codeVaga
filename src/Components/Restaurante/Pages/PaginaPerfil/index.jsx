@@ -2,14 +2,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Style from "./paginaPerfil.module.css";
 import { useEffect } from "react";
 
-const RestaurantePerfil = ({ id, restaurante }) => {
+const RestaurantePerfil = ({user, dados}) => {
     const navigate = useNavigate();
     
     useEffect(() => {
-        if (id == null || !restaurante) {
+        if (localStorage.getItem("userCurrent")) {
             navigate("/");
         }
-
     }, [])
 
   
@@ -18,11 +17,11 @@ const RestaurantePerfil = ({ id, restaurante }) => {
         <section className={Style.containerPerfil}>
             <div className={Style.cabecalhoperfil}>
                 <div className={Style.cabecalhoperfilItem}>
-                    <h2>{restaurante.nome}</h2>
+                    <h2>{dados.nome}</h2>
                     <img src="" alt="" />
                 </div>
                 <div className={Style.cabecalhoperfilItem}>
-                    <p>Avaliações : {restaurante.avaliacao}</p>
+                    <p>Avaliações : {dados.avaliacao}</p>
                     <p>Cardapio :  </p>
                 </div>
             </div>

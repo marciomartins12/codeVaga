@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Style from "./pageLogin.module.css";
-const PageLogin = ({ setid, escolha }) => {
+const PageLogin = ({tipoDeConta, setuser, user}) => {
 
     const [json, setJson] = useState(null);
-    function verificaLog() {
+
+    function verificaLog(){
         const usercurrent = localStorage.getItem("userCurrent")
         if (usercurrent) {
-
             const usercurrentjson = JSON.parse(usercurrent)
             enviarForm(usercurrentjson.email, usercurrentjson.senha)
         }
@@ -18,7 +18,7 @@ const PageLogin = ({ setid, escolha }) => {
                 let response;
                 let jsonData;
 
-                if (escolha == "restaurante") {
+                if (tipoDeConta == "restaurante") {
                     response = await fetch("src/Services/RestaurantesContas.json");
                     jsonData = await response.json();
                 } else {
@@ -30,8 +30,6 @@ const PageLogin = ({ setid, escolha }) => {
                 console.error("Erro ao carregar JSON:", error);
             }
         }
-
-
         fetchData();
     }, []);
     useEffect(() => {
@@ -49,19 +47,18 @@ const PageLogin = ({ setid, escolha }) => {
         const pacote = json.find((e) => e.email === email);
 
         if (pacote) {
-            pacote.senha === senha ? setid(pacote.id) : ""
-            window.localStorage.setItem("userCurrent", JSON.stringify({ email: email, senha: senha }))
-            pacote.senha === senha ? Navigate(`${escolha == "restaurante" ? "/homepagerestaurante" : "/homepagecliente"}`) : setfal(true)
-        } else {
-
-            setfal(true);
+            if(pacote.senha === senha){
+                window.localStorage.setItem("userCurrent", JSON.stringify({ email: email, senha: senha }))
+                setuser([email, senha, tipoDeConta]);
+                Navigate(`${tipoDeConta == "restaurante" ? "/homepagerestaurante" : "/homepagecliente"}`)
+                return
+            }
         }
-
+            setfal(true);
     }
     return (
         <section className={Style.containerPageLogin}>
-            <p className={Style.nome}>ThurDona</p>
-            <p>Fazer login {escolha.charAt(0).toUpperCase() + escolha.substring(1)}</p>
+            <p>Fazer login {tipoDeConta.charAt(0).toUpperCase() + tipoDeConta.substring(1)}</p>
             <p className={Style.dados}>coloque seus dados</p>
             <form
                 onSubmit={(e) => {
@@ -70,10 +67,9 @@ const PageLogin = ({ setid, escolha }) => {
                 }
                 }>
                 <div className={Style.containerinputs}>
-                    <img src={`src/Components/assets/icons/${escolha == "restaurante" ? "restaurante" : "pessoa"}.png`} alt="icon restaurantes" />
+                    <img src={`src/Components/assets/icons/${tipoDeConta == "restaurante" ? "restaurante" : "pessoa"}.png`} alt="icon restaurantes" />
                     <input onChange={(e) => {
                         setemail(e.target.value)
-                        console.log(email)
                     }} value={email}
                         type="email"
                         placeholder="email"
