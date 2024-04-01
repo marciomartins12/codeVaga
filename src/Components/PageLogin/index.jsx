@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Style from "./pageLogin.module.css";
-const PageLogin = ({tipoDeConta, setuser, user}) => {
+const PageLogin = ({setuser, user}) => {
 
     const [json, setJson] = useState(null);
-
+console.log("aaaaaaaaaaaaaaaaaaaaaaaa",user)
     function verificaLog(){
         const usercurrent = localStorage.getItem("userCurrent")
         if (usercurrent) {

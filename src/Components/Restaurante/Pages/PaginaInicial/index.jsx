@@ -5,7 +5,7 @@ import Styles from "./paginainicial.module.css";
 
 const PaginaRestaurante = ({ user, dados}) => {
     const navigate = useNavigate();
-    
+    console.log("dados : ",dados)
     useEffect(() => {
         if (!user && localStorage.getItem("userCurrent")) {
             navigate("/");

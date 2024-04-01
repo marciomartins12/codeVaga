@@ -1,44 +1,48 @@
 import HomePage from './Components/HomePage'
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes, Outlet } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import PageLogin from './Components/PageLogin'
 import PaginaRestaurante from './Components/Restaurante/Pages/PaginaInicial'
 import RestaurantePerfil from './Components/Restaurante/Pages/PaginaPerfil'
 import TipoDeConta from './Components/HomePage/TipoDeConta'
 
-
-
-
 const App = () => {
-  const [dados, setdados] = useState('');
-  const [user, setuser] = useState('');
-  const [tipoDeConta, setTipodeDeConta] = useState('');
+  const [dados, setDados] = useState('');
+  const [user, setUser] = useState({ email: '', senha: '', tipoDeConta: '' });
+  const [tipoDeConta, setTipoDeConta] = useState('');
 
+  useEffect(()=>{
+    let storagelocal =localStorage.getItem("userCurrent");
+    let ljson = JSON.parse(storagelocal)
+    if(ljson){
+      setUser(ljson)
+      console.log("olha user",user)
+    }
+  },[])
   useEffect(() => {
-    async function fetchData() {
+    async function buscaDados() {
       try {
-
-        let [email, senha, tipoDeConta] = user;
-        if (email && senha && tipoDeConta) {
+        const { email, senha, tipoDeConta } = user;
+        console.log(email, senha, tipoDeConta);
+        console.log("aiaiai")
+          let todosDados;
           if (tipoDeConta === "restaurante") {
-            let todosDados = await fetch("src/Services/RestaurantesContas.json");
-            let todosDadosJson = todosDados.json();
-            let dadosBuscados = todosDadosJson.find((e) => e.email === email);
-            setdados(dadosBuscados);
-            console.log(dados)
+            todosDados = await fetch("src/Services/RestaurantesContas.json");
+            console.log("todos os dados", todosDados)
           } else {
-            let todosDados = await fetch("src/Services/cliente.json");
-            let todosDadosJson = todosDados.json();
-            let dadosBuscados = todosDadosJson.find((e) => e.email === email);
-            setdados(dadosBuscados);
+            todosDados = await fetch("src/Services/cliente.json");
           }
-        }
-      } catch {
-        console.log("erro");
+          const todosDadosJson = await todosDados.json();
+          const dadosBuscados = todosDadosJson.find((e) => e.email === email);
+          setDados(dadosBuscados);
+          console.log("aqui",dados);
+        
+      } catch (error) {
+        console.log("erro:", error);
       }
     }
-  }, [user])
-
+    buscaDados();
+  }, []);
 
   return (
     <div>
@@ -46,11 +50,11 @@ const App = () => {
         <Routes>
           <Route path='/' element={<HomePage />}>
             <Route index element={<TipoDeConta
-              setTipoDeConta={(e) => setTipodeDeConta(e)}
+              setTipoDeConta={(e) => setTipoDeConta(e)}
             />} />
             <Route path='/PageLogin' element={<PageLogin
               tipoDeConta={tipoDeConta}
-              setuser={(e) => setuser(e)}
+              setUser={(e) => setUser(e)}
               user={user}
             />} />
           </Route>
@@ -65,12 +69,10 @@ const App = () => {
             <Route path='cardapio' element={<RestaurantePerfil />} />
             <Route path='pedidos' element={<RestaurantePerfil />} />
           </Route>
-
-
         </Routes>
       </BrowserRouter>
-
     </div>
   )
 }
+
 export default App;

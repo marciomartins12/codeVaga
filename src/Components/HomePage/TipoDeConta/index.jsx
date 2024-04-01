@@ -1,9 +1,15 @@
 import Styles from "../homepage.module.css";
 import { useNavigate } from "react-router-dom";
-const TipoDeConta = ({ setTipoDeConta }) => {
+const TipoDeConta = () => {
     const navegador = useNavigate();
+
     function TipoDaConta(click) {
-        setTipoDeConta(click);
+        let contrario = click== "restaurante"? "restaurante" : "cliente";
+        if(JSON.parse(localStorage.getItem("tipoUser"))==contrario){
+            console.log("tava cliente")
+            localStorage.clear()
+        }
+        localStorage.setItem("tipoUser", click)
         navegador("/PageLogin")
     }
     return (
