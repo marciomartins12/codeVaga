@@ -1,73 +1,57 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import Style from "./pageLogin.module.css";
-const PageLogin = ({setuser, user}) => {
+import { useDispatch, useSelector } from "react-redux";
+import { logar } from "../../Redux/UserSlice";
+const PageLogin = () => {
 
-    const [json, setJson] = useState(null);
-console.log("aaaaaaaaaaaaaaaaaaaaaaaa",user)
-    function verificaLog(){
-        const usercurrent = localStorage.getItem("userCurrent")
-        if (usercurrent) {
-            const usercurrentjson = JSON.parse(usercurrent)
-            enviarForm(usercurrentjson.email, usercurrentjson.senha)
-        }
-    }
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                let response;
-                let jsonData;
-
-                if (tipoDeConta == "restaurante") {
-                    response = await fetch("src/Services/RestaurantesContas.json");
-                    jsonData = await response.json();
-                } else {
-                    response = await fetch("src/Services/cliente.json");
-                    jsonData = await response.json();
-                }
-                setJson(jsonData);
-            } catch (error) {
-                console.error("Erro ao carregar JSON:", error);
-            }
-        }
-        fetchData();
-    }, []);
-    useEffect(() => {
-        if (json) {
-            verificaLog();
-        }
-    }, [json]);
 
     const [email, setemail] = useState("");
     const [senha, setsenha] = useState("");
+    const [contaSelecionada, setcontaS] = useState('');
     const [fal, setfal] = useState(false);
-    const Navigate = useNavigate();
 
-    function enviarForm(email, senha) {
-        const pacote = json.find((e) => e.email === email);
+    const dispatch = useDispatch();
+    const state = useSelector(state => state.user);
 
-        if (pacote) {
-            if(pacote.senha === senha){
-                window.localStorage.setItem("userCurrent", JSON.stringify({ email: email, senha: senha }))
-                setuser([email, senha, tipoDeConta]);
-                Navigate(`${tipoDeConta == "restaurante" ? "/homepagerestaurante" : "/homepagecliente"}`)
-                return
-            }
-        }
-            setfal(true);
+
+    function enviarForm(email, senha, contaSelecionada) {
+
+        dispatch(logar([email, senha, contaSelecionada]))
+        
     }
+
+    useEffect(()=>{
+        if (state.senhaErrada == true) {
+            console.log("false")
+            setfal(true);
+        }
+    },[state.senhaErrada]);
+
     return (
         <section className={Style.containerPageLogin}>
-            <p>Fazer login {tipoDeConta.charAt(0).toUpperCase() + tipoDeConta.substring(1)}</p>
+            <>
+                <p>voce deseja entrar como:</p>
+                <p className={Style.span}>selecione um:</p>
+                <div className={Style.containerSelector}>
+                    <div className={`${Style.taga}  ${contaSelecionada == "cliente" ? Style.selecionado : ''}`} onClick={() => setcontaS('cliente')}>
+                        <img src="src/Components/assets/icons/pessoa.png" alt="icon pessoa" />
+                        pessoa
+                    </div>
+                    <div className={`${Style.taga}  ${contaSelecionada == "restaurante" ? Style.selecionado : ''}`} onClick={() => setcontaS('restaurante')}>
+                        <img src="src/Components/assets/icons/restaurante.png" alt="icon restaurante" />
+                        restaurante
+                    </div>
+                </div>
+            </>
             <p className={Style.dados}>coloque seus dados</p>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    enviarForm(email, senha)
+                    enviarForm(email, senha, contaSelecionada);
                 }
                 }>
                 <div className={Style.containerinputs}>
-                    <img src={`src/Components/assets/icons/${tipoDeConta == "restaurante" ? "restaurante" : "pessoa"}.png`} alt="icon restaurantes" />
+                    <img src={`src/Components/assets/icons/email.png`} alt="icon restaurantes" />
                     <input onChange={(e) => {
                         setemail(e.target.value)
                     }} value={email}
@@ -89,7 +73,7 @@ console.log("aaaaaaaaaaaaaaaaaaaaaaaa",user)
                     />
                 </div>
                 {fal ? <p className={Style.mensagemsenhaerrada}>senha ou email incorreto. Tente novamente.</p> : <></>}
-                <button className={Style.btn} disabled={senha.length >= 8 ? false : true} >Entrar</button>
+                <button className={Style.btn} disabled={senha.length >= 8 && contaSelecionada ? false : true} >Entrar</button>
                 <button className={Style.criarconta}>criar conta</button>
             </form>
         </section>

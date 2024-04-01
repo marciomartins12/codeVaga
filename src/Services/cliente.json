@@ -1,7 +1,7 @@
 [{
     "nome": "Junin",
     "email": "junindogas@gmail.com",
-    "id": 1,
+    "tipoDeConta": "cliente",
     "senha": "junin123",
     "cpf": "01410412555"
 }]

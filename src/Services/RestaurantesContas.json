@@ -2,13 +2,13 @@
     {
         "nome": "Fogo e Brasa",
         "email": "marcio@gmail.com",
-        "id": 1,
+        "tipoDeConta": "restaurante",
         "senha": "12345678"
     },
     {
         "nome": "Pastel de Flango",
         "email": "pasteldeflango@gmail.com",
-        "id": 2,
+        "tipoDeConta": "restaurante",
         "senha": "123flango"
     }
     ,{

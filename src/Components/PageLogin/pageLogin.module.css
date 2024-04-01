@@ -1,3 +1,43 @@
+.containerHomepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+}
+
+.containerSelector {
+    width: 100%;
+    margin: 1em 0 2em 0;
+    max-width: 480px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.nomesite{
+    font-weight: 700;
+}
+.span{
+    font-weight: 300;
+}
+.nomesite,
+.span {
+    margin: 1em 0;
+    color: #867E7E;
+}
+
+.taga {
+    cursor:pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 1em;
+}
+
+
 .containerPageLogin {
     display: flex;
     flex-direction: column;
@@ -28,20 +68,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    gap: 1.50em;
 }
 
 .containerinputs{   
     width: 100%;
     display: flex;
+    gap:1em;
     align-items: center;
     
 }
-
+.containerinputs img{
+    width: 30px;
+    height: auto;
+}
 .containerPageLogin input {
     border-radius: 0.3em;
-    border: 1px solid rgb(246, 206, 206);
-    padding: .56em;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.303) 0px 7px 29px 0px;
+    padding: .60em;
 }
 
 .btn {
@@ -67,4 +112,8 @@
 .mensagemsenhaerrada{
     font-size: .75em;
     color: red;
+}
+.selecionado{
+    border-radius: .25em;
+    box-shadow: rgba(100, 100, 111, 0.303) 0px 7px 29px 0px;
 }
