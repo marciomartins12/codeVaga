@@ -32,6 +32,7 @@ const App = () => {
 
           {/* homepage restaurante */}
           <Route path='/homepagerestaurante' element={<PaginaRestaurante id={user} />}>
+            <Route index element={<div>Seja Bem vindo!</div>}/>
             <Route path='perfil' element={<RestaurantePerfil />} />
             <Route path='cardapio' element={<RestaurantePerfil />} />
             <Route path='pedidos' element={<RestaurantePerfil />} />

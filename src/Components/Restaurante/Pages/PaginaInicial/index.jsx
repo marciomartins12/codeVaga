@@ -6,6 +6,7 @@ import Restaurantes from "../../../../Services/restauranteUsuario.json";
 
 const PaginaRestaurante = ({ id }) => {
     const navigate = useNavigate();
+    const [restaurante, setRestaurante] = useState();
     useEffect(() => {
         if (id == null) {
             navigate("/");
@@ -13,7 +14,9 @@ const PaginaRestaurante = ({ id }) => {
 
     }, [])
     useEffect(() => {
-       const restaurante =  Restaurantes.find((e)=> e.id == id);
+        let data = Restaurantes.find((e)=> e.id === id);
+       setRestaurante(data);
+       console.log(restaurante)
        console.log(restaurante)
        if(restaurante){
              if(restaurante.email === JSON.parse(localStorage.getItem("userCurrent")).email){
@@ -32,11 +35,13 @@ const PaginaRestaurante = ({ id }) => {
             <nav className={Styles.cabecalho}>
                 <h2>Restaurante</h2>
                 <button onClick={() => {
+                    navigate('/')
                     window.localStorage.clear()
                 }}>Sair</button>
             </nav>
             <Outlet
                id={id}
+               restaurante={restaurante}
             />
             <nav className={Styles.navbar}>
 
