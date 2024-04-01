@@ -34,7 +34,7 @@ const App = () => {
           }
         }
       } catch {
-        console.log("erro")
+        console.log("erro");
       }
     }
   }, [user])
