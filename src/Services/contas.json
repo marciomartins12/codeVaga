@@ -1,0 +1,23 @@
+[
+    {
+        "nome": "Junin",
+        "email": "junindogas@gmail.com",
+        "tipoDeConta": "cliente",
+        "senha": "junin123",
+        "cpf": "01410412555"
+    },
+    {
+        "nome": "Fogo e Brasa",
+        "email": "marcio@gmail.com",
+        "tipoDeConta": "restaurante",
+        "senha": "12345678",
+        "cnpj": "1511/4212-12"
+    },
+    {
+        "nome": "Pastel de Flango",
+        "email": "pasteldeflango@gmail.com",
+        "tipoDeConta": "restaurante",
+        "senha": "123flango",
+        "cnpj": "1511/4212-12"
+    }
+]
