@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { logar } from "../../Redux/UserSlice"
 import Style from "./HomePage.module.css";
@@ -19,9 +19,46 @@ const HomePage = () => {
         <section>
             <h2>aaaa{state.nome}</h2>
             {state.email}
-            {state.isLogged? "aiaiia" : "uiuiu"}
+            {state.isLogged ? "aiaiia" : "uiuiu"}
             <Outlet />
-            <nav> aaaaaaaaaaaa</nav>
+            {state.tipoDeConta=='restaurante'?
+                <nav>
+<Link to='perfilRestaurante'>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+<Link to=''>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+<Link to=''>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+<Link to=''>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+                </nav> :
+                <nav>
+<Link to=''>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+<Link to=''>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+<Link to=''>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+<Link to=''>
+    <img src="" alt="" />
+    <p></p>
+</Link>
+                </nav>
+            }
 
         </section>
     )
