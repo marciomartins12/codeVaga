@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Style from "./pageLogin.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { logar } from "../../Redux/UserSlice";
+import { useNavigate } from "react-router-dom";
 const PageLogin = () => {
 
 
@@ -11,21 +12,27 @@ const PageLogin = () => {
     const [fal, setfal] = useState(false);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const state = useSelector(state => state.user);
 
 
     function enviarForm(email, senha, contaSelecionada) {
-
         dispatch(logar([email, senha, contaSelecionada]))
-        
     }
+   
+    useEffect(() => {
+        if (state.isLogged) {
+            navigate("homePage");
+        } else {
+            console.log("erro senha");
+        }
+    }, [state.isLogged]);
 
-    useEffect(()=>{
+    useEffect(() => {
         if (state.senhaErrada == true) {
-            console.log("false")
             setfal(true);
         }
-    },[state.senhaErrada]);
+    }, [state.senhaErrada]);
 
     return (
         <section className={Style.containerPageLogin}>

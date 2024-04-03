@@ -11,11 +11,10 @@ export const slice = createSlice({
     },
     reducers: {
         logar(state, { payload }) {
-            console.log("dispatch logar", payload)
             const [email, senha, tipo] = payload;
             const contaEncontrada = contas.find(conta => conta.email === email && conta.senha === senha && conta.tipoDeConta === tipo)
             if (contaEncontrada) {
-                localStorage.setItem("userCurrent", [email, senha])
+                localStorage.setItem("userCurrent", JSON.stringify([email, senha, tipo]));
                 return {
                     ...state,
                     isLogged: true,
