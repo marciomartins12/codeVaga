@@ -4,20 +4,103 @@
         "email": "junindogas@gmail.com",
         "tipoDeConta": "cliente",
         "senha": "junin123",
-        "cpf": "01410412555"
+        "cpf": "01410412555",
+        "img": "https://github.com/marciomartins12.png"
     },
     {
         "nome": "Fogo e Brasa",
         "email": "marcio@gmail.com",
         "tipoDeConta": "restaurante",
         "senha": "12345678",
-        "cnpj": "1511/4212-12"
+        "cnpj": "1511/4212-12",
+        "img": "https://github.com/marciomartins12.png",
+        "descricao": "Restaurante que vende comida",
+        "localizacao": "Rua dos Corvos - 1/12",
+        "avaliacao": 4.5,
+        "tipoPagamento": "Cartão Credito Debito, pix",
+        "cardapio": [
+            {
+                "categoria": "Bebidas",
+                "itens": [
+                    {
+                        "nome": "Coca-Cola",
+                        "valor": 5.0
+                    },
+                    {
+                        "nome": "Suco de Laranja",
+                        "valor": 4.0
+                    },
+                    {
+                        "nome": "Água Mineral",
+                        "valor": 3.0
+                    }
+                ]
+            },
+            {
+                "categoria": "Pratos",
+                "itens": [
+                    {
+                        "nome": "Pizza Margherita",
+                        "valor": 25.0
+                    },
+                    {
+                        "nome": "Hambúrguer",
+                        "valor": 20.0
+                    },
+                    {
+                        "nome": "Salada Caesar",
+                        "valor": 15.0
+                    }
+                ]
+            }
+        ]
     },
     {
         "nome": "Pastel de Flango",
         "email": "pasteldeflango@gmail.com",
         "tipoDeConta": "restaurante",
         "senha": "123flango",
-        "cnpj": "1511/4212-12"
+        "cnpj": "1511/4212-12",
+        "img": "https://github.com/marciomartins12.png",
+        "descricao": "Restaurante que vende comida",
+        "localizacao": "Rua dos Corvos - 1/12",
+        "avaliacao": 4.5,
+        "tipoPagamento": "Cartão Credito Debito, pix",
+        "cardapio": [
+            {
+                "categoria": "Bebidas",
+                "itens": [
+                    {
+                        "nome": "Coca-Cola",
+                        "valor": 5.0
+                    },
+                    {
+                        "nome": "Suco de Laranja",
+                        "valor": 4.0
+                    },
+                    {
+                        "nome": "Água Mineral",
+                        "valor": 3.0
+                    }
+                ]
+            },
+            {
+                "categoria": "Pratos",
+                "itens": [
+                    {
+                        "nome": "Pizza Margherita",
+                        "valor": 25.0
+                    },
+                    {
+                        "nome": "Hambúrguer",
+                        "valor": 20.0
+                    },
+                    {
+                        "nome": "Salada Caesar",
+                        "valor": 15.0
+                    }
+                ]
+            }
+        ]
     }
 ]

@@ -1,0 +1,132 @@
+.containerPerfil {
+    width: 100%;
+}
+
+.cabecalhoTipo {
+    text-align: center;
+    width: 100%;
+    padding: .80em 0;
+    background-color: antiquewhite;
+    margin-bottom: 2em;
+}
+
+.cabecalhoPerfil {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.cabecalhoPerfil h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.cabecalhoPerfil img {
+    width: 48px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.cabecalhoSegundo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: .75em;
+    margin: 1em 0 4em 0;
+}
+
+.cabecalhoSegundo div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerSegundo {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 5em;
+    margin-bottom: 2.5em;
+}
+
+.containerSegundo h4 {
+    font-weight: 500;
+    border-bottom: 1px solid brown;
+    color: brown;
+}
+
+.containerInfos {
+    width: 80%;
+    margin: auto;
+}
+
+.containerInfos h3 {
+    font-weight: 600;
+}
+
+.containerEdit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerEdit button {
+    border: none;
+}
+
+.containerEdit img {
+    width: 24px;
+    height: auto;
+}
+
+.descricao {
+    margin-left: 1em;
+}
+.div{
+    margin-bottom: 3em;
+}
+
+.estadoDoRestaurante {
+    width: 100%;
+    margin-top: 1em;
+    text-align: center;
+    border-radius: .50em;
+    padding: 1em 0;
+    background-color: antiquewhite;
+}
+
+.abrirFechar {
+    display: flex;
+    justify-content: end;
+    font-size: 0.7em;
+    margin-bottom: 1em;
+}
+
+.editarPerfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: antiquewhite;
+    margin-top: 1em;
+    border-radius: .50em;
+    
+}
+
+
+.editarPerfil img {
+    width: 24px;
+    height: auto;
+}
+
+.editarPerfil button {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    text-align: center;
+    background-color: antiquewhite;
+    border: none;
+}

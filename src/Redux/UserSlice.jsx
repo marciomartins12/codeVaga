@@ -8,6 +8,13 @@ export const slice = createSlice({
         tipoDeConta: "",
         isLogged: false,
         senhaErrada: false,
+        img: "",
+        descricao: "",
+        cardapio: [],
+        localizacao: "",
+        avaliacao: "",
+        fechado: true,
+        tipoPagamento : ""
     },
     reducers: {
         logar(state, { payload }) {
@@ -21,7 +28,14 @@ export const slice = createSlice({
                     name: contaEncontrada.nome,
                     email: contaEncontrada.email,
                     tipoDeConta: contaEncontrada.tipoDeConta,
-                    senhaErrada: false
+                    senhaErrada: false,
+                    img: contaEncontrada.img,
+                    descricao: contaEncontrada.descricao,
+                    cardapio: contaEncontrada.cardapio,
+                    localizacao: contaEncontrada.localizacao,
+                    avaliacao: contaEncontrada.avaliacao,
+                    fechado: contaEncontrada.fechado,
+                    tipoPagamento : contaEncontrada.tipoPagamento
                 }
             }
             return {
