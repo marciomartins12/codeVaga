@@ -17,32 +17,40 @@ const HomePage = () => {
         }
     }, []);
     return (
-        <section className={Style.containerHomepage}>   
+        <section className={Style.containerHomepage}>
             <Outlet />
 
             {state.tipoDeConta == 'restaurante' ?
                 <nav className={Style.navegadorEntreAbas}>
-                    <button onClick={()=> navegador("cardapio")}>
+                    <button onClick={() =>{
+                          if(state.tipoDeConta == "restaurante"){
+                            navegador("cardapioRestaurante")
+
+                        }else{
+
+                            navegador("cardapioCliente")
+                        }
+                    }}>
                         <img src="src/Components/assets/icons/cardapio.png" alt="icon cardapio" />
                         <p>Cardapio</p>
                     </button>
-                    <button onClick={()=> navegador("pedidos")}>
+                    <button onClick={() => navegador("pedidos")}>
                         <img src="src/Components/assets/icons/pedidos.png" alt="icon cardapio" />
                         <p>Pedidos</p>
                     </button>
-                    <button onClick={()=> navegador("/")}>
+                    <button onClick={() => navegador("/")}>
                         <img src="src/Components/assets/icons/perfilrestaurante.png" alt="icon perfil" />
                         <p>Perfil</p>
                     </button>
 
 
                 </nav> :
-                <nav>
-                    conta cliente
-                </nav>
-            }
+    <nav>
+        conta cliente
+    </nav>
+}
 
-        </section>
+        </section >
     )
 }
 

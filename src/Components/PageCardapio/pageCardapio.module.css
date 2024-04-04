@@ -1,0 +1,29 @@
+.containerCardapio {
+    width: 100%;
+}
+
+.cabecalhoTipo {
+    text-align: center;
+    width: 100%;
+    padding: .80em 0;
+    background-color: antiquewhite;
+    margin-bottom: 2em;
+}
+
+.cabecalhoPerfil {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.cabecalhoPerfil h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.cabecalhoPerfil img {
+    width: 48px;
+    height: auto;
+    border-radius: 100%;
+}
