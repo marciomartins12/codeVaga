@@ -2,9 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { logar } from "../../Redux/UserSlice";
 import Style from "./Perfil.module.css";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const Perfil = () => {
     const dispatch = useDispatch()
     const state = useSelector(state => state.user);
+const navegador = useNavigate()
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem('userCurrent'));
         if (storedUser) {
@@ -22,7 +24,7 @@ const Perfil = () => {
             </div>
             <div className={Style.cabecalhoSegundo}>
                 <p>avaliações {state.avaliacao}</p>
-                <div>
+                <div onClick={()=> navegador('cardapio')}>
                     Cardápio
                     <p>{state.cardapio[0] ? state.cardapio[0].itens.length + state.cardapio[1].itens.length : <></>} itens</p>
                 </div>
@@ -30,7 +32,7 @@ const Perfil = () => {
 
             <div className={Style.containerSegundo}>
                 <h4>informações</h4>
-                <p>Cardapio</p>
+                <p  onClick={()=> navegador('cardapio')}>Cardapio</p>
             </div>
 
             <section className={Style.containerInfos}>
