@@ -16,47 +16,28 @@ const HomePage = () => {
         }
     }, []);
     return (
-        <section>
-            <h2>aaaa{state.nome}</h2>
-            {state.email}
-            {state.isLogged ? "aiaiia" : "uiuiu"}
+        <section className={Style.containerHomepage}>
             <Outlet />
-            {state.tipoDeConta=='restaurante'?
-                <nav>
-<Link to='perfilRestaurante'>
-    <img src="" alt="" />
-    <p></p>
-</Link>
-<Link to=''>
-    <img src="" alt="" />
-    <p></p>
-</Link>
-<Link to=''>
-    <img src="" alt="" />
-    <p></p>
-</Link>
-<Link to=''>
-    <img src="" alt="" />
-    <p></p>
-</Link>
+
+            {state.tipoDeConta == 'restaurante' ?
+                <nav className={Style.navegadorEntreAbas}>
+                    <button>
+                        <img src="src/Components/assets/icons/cardapio.png" alt="icon cardapio" />
+                        <p>Cardapio</p>
+                    </button>
+                    <button>
+                        <img src="src/Components/assets/icons/pedidos.png" alt="icon cardapio" />
+                        <p>Pedidos</p>
+                    </button>
+                    <button>
+                        <img src="src/Components/assets/icons/perfilrestaurante.png" alt="icon cardapio" />
+                        <p>Perfil</p>
+                    </button>
+
+
                 </nav> :
                 <nav>
-<Link to=''>
-    <img src="" alt="" />
-    <p></p>
-</Link>
-<Link to=''>
-    <img src="" alt="" />
-    <p></p>
-</Link>
-<Link to=''>
-    <img src="" alt="" />
-    <p></p>
-</Link>
-<Link to=''>
-    <img src="" alt="" />
-    <p></p>
-</Link>
+                    conta cliente
                 </nav>
             }
 

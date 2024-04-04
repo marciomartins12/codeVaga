@@ -7,8 +7,10 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<PageLogin />}/>
-          <Route path='/homePage' element={<HomePage/>}/>
+          <Route path='/' element={<PageLogin />} />
+          <Route path='/homePage' element={<HomePage />}>
+            <Route index element={<>aa</>}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
