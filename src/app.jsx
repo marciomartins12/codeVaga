@@ -11,6 +11,8 @@ const App = () => {
           <Route path='/' element={<PageLogin />} />
           <Route path='/homePage' element={<HomePage />}>
             <Route index element={<Perfil/>}/>
+            <Route path='pedidos' element={<>pedidos</>}/>
+            <Route path='cardapio' element={<>cardapio</>}/>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -22,16 +22,16 @@ const HomePage = () => {
 
             {state.tipoDeConta == 'restaurante' ?
                 <nav className={Style.navegadorEntreAbas}>
-                    <button onClick={()=> navegador("/")}>
+                    <button onClick={()=> navegador("cardapio")}>
                         <img src="src/Components/assets/icons/cardapio.png" alt="icon cardapio" />
                         <p>Cardapio</p>
                     </button>
-                    <button onClick={()=> navegador("/pedidos")}>
+                    <button onClick={()=> navegador("pedidos")}>
                         <img src="src/Components/assets/icons/pedidos.png" alt="icon cardapio" />
                         <p>Pedidos</p>
                     </button>
-                    <button onClick={()=> navegador("/cardapio")}>
-                        <img src="src/Components/assets/icons/perfilrestaurante.png" alt="icon cardapio" />
+                    <button onClick={()=> navegador("/")}>
+                        <img src="src/Components/assets/icons/perfilrestaurante.png" alt="icon perfil" />
                         <p>Perfil</p>
                     </button>
 
