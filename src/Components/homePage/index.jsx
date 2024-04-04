@@ -14,7 +14,7 @@ const HomePage = () => {
             const [email, senha, tipo] = storedUser;
             dispatch(logar([email, senha, tipo]));
         }
-    }, [dispatch]);
+    }, []);
     return (
         <section>
             <h2>aaaa{state.nome}</h2>
