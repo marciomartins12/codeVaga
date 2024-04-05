@@ -1,0 +1,51 @@
+[
+    {
+        "restaurante": "Fogo e Brasa",
+        "emailRestaurante": "marcio@gmail.com",
+        "idPedido": 1,
+        "cliente": "JoseFina",
+        "localizacaoCliente": "rua Alamedas 3",
+        "pedido": [
+            {
+                "categoria": "Bebidas",
+                "item": "Coca-Cola",
+                "valor": 5.0
+            }
+        ],
+        "aceitoPeloRestaurante": true,
+        "estadoPedido": "Entregue"
+    },
+    {
+        "restaurante": "Fogo e Brasa",
+        "emailRestaurante": "marcio@gmail.com",
+        "idPedido": 2,
+        "cliente": "Arnaldo",
+        "localizacaoCliente": "rua Alamedas 1",
+        "pedido": [
+            {
+                "categoria": "Pratos",
+                "item": "Pizza Margherita",
+                "valor": 25.0
+            }
+        ],
+        "aceitoPeloRestaurante": "",
+        "estadoPedido": "Esperando Confiramação do Restaurante"
+    },
+    {
+        "restaurante": "Fogo e Brasa",
+        "emailRestaurante": "marcio@gmail.com",
+        "idPedido": 3,
+        "cliente": "Arnaldo",
+        "localizacaoCliente": "rua Alamedas 1",
+        "pedido": [
+            {
+                "categoria": "Pratos",
+                "item": "Pizza Margherita",
+                "valor": 25.0
+            }
+        ],
+        "aceitoPeloRestaurante": false,
+        "estadoPedido": "Restaurante recusou o pedido"
+    }
+
+]

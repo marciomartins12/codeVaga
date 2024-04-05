@@ -3,6 +3,7 @@ import PageLogin from './Components/PageLogin'
 import HomePage from './Components/homePage';
 import Perfil from './Components/PagePerfil';
 import CardapioRestaurante from './Components/PageCardapio';
+import Pedidos from './Components/PagePedidos';
 const App = () => {
 
   return (
@@ -12,9 +13,9 @@ const App = () => {
           <Route path='/' element={<PageLogin />} />
           <Route path='/homePage' element={<HomePage />}>
             <Route index element={<Perfil />} />
-            <Route path='pedidos' element={<>pedidos</>} />
-            <Route path='cardapioRestaurante' element={<CardapioRestaurante />} />
-            <Route path='cardapioCliente' element={<>Cardapio Cliente</>} />
+            <Route path='pedidos' element={<Pedidos/>} />
+            <Route path='cardapioRestaurante' element={<CardapioRestaurante/>} />
+            <Route path='cardapioCliente' element={<>Cardapio Cliente</>}/>
           </Route>
         </Routes>
       </BrowserRouter>
