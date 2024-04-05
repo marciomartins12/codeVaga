@@ -31,15 +31,15 @@ const HomePage = () => {
                             navegador("cardapioCliente")
                         }
                     }}>
-                        <img src="src/Components/assets/icons/cardapio.png" alt="icon cardapio" />
+                        <img src="/public/assets/icons/cardapio.png" alt="icon cardapio" />
                         <p>Cardapio</p>
                     </button>
                     <button onClick={() => navegador("pedidos")}>
-                        <img src="src/Components/assets/icons/pedidos.png" alt="icon cardapio" />
+                        <img src="/public/assets/icons/pedidos.png" alt="icon cardapio" />
                         <p>Pedidos</p>
                     </button>
                     <button onClick={() => navegador("/")}>
-                        <img src="src/Components/assets/icons/perfilrestaurante.png" alt="icon perfil" />
+                        <img src="/public/assets/icons/perfilrestaurante.png" alt="icon perfil" />
                         <p>Perfil</p>
                     </button>
 

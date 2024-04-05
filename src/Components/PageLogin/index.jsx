@@ -41,11 +41,11 @@ const PageLogin = () => {
                 <p className={Style.span}>selecione um:</p>
                 <div className={Style.containerSelector}>
                     <div className={`${Style.taga}  ${contaSelecionada == "cliente" ? Style.selecionado : ''}`} onClick={() => setcontaS('cliente')}>
-                        <img src="src/Components/assets/icons/pessoa.png" alt="icon pessoa" />
+                        <img src="/public/assets/icons/pessoa.png" alt="icon pessoa" />
                         pessoa
                     </div>
                     <div className={`${Style.taga}  ${contaSelecionada == "restaurante" ? Style.selecionado : ''}`} onClick={() => setcontaS('restaurante')}>
-                        <img src="src/Components/assets/icons/restaurante.png" alt="icon restaurante" />
+                        <img src="/public/assets/icons/restaurante.png" alt="icon restaurante" />
                         restaurante
                     </div>
                 </div>
@@ -58,7 +58,7 @@ const PageLogin = () => {
                 }
                 }>
                 <div className={Style.containerinputs}>
-                    <img src={`src/Components/assets/icons/email.png`} alt="icon restaurantes" />
+                    <img src={`/public/assets/icons/email.png`} alt="icon restaurantes" />
                     <input onChange={(e) => {
                         setemail(e.target.value)
                     }} value={email}
@@ -68,7 +68,7 @@ const PageLogin = () => {
                     />
                 </div>
                 <div className={Style.containerinputs}>
-                    <img src="src/Components/assets/icons/password.png" alt="" />
+                    <img src="/public/assets/icons/password.png" alt="" />
                     <input
                         onChange={(e) => {
                             setsenha(e.target.value)

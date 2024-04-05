@@ -12,7 +12,7 @@ const ExibeItem = ({ item }) => {
                                 <img src={e.imgItem} alt="" />
                                 <h2>{e.nome}</h2>
                             </div>
-                            <button>editar Item</button>
+                            <button><img src="/public/assets/icons/editor.png" alt="" /></button>
                         </div>
                     )
                 })

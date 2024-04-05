@@ -58,5 +58,10 @@
 }
 .itemCardapio button{
     border: none;
-
+    border-radius: 100%;
+    background-color: white;
+}
+.itemCardapio button img{
+    width: 32px;
+    height: auto;
 }

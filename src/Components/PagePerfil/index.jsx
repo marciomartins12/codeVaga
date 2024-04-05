@@ -39,7 +39,7 @@ const navegador = useNavigate()
                 <div className={Style.div}>
                     <div className={Style.containerEdit}>
                         <h3>Descrição do Restaurante</h3>
-                        <button><img src="src/Components/assets/icons/editor.png" alt="icon editor" /></button>
+                        <button><img src="/public/assets/icons/editor.png" alt="icon editor" /></button>
                     </div>
                     <p className={Style.descricao}>
                         {state.descricao}
@@ -48,7 +48,7 @@ const navegador = useNavigate()
                 <div className={Style.div}>
                     <div className={Style.containerEdit}>
                         <h3>Tipos de Pagamento</h3>
-                        <button><img src="src/Components/assets/icons/editor.png" alt="icon editor" /></button>
+                        <button><img src="/public/assets/icons/editor.png" alt="icon editor" /></button>
                     </div>
                     <p className={Style.descricao}>
                         {state.tipoPagamento}
@@ -56,7 +56,7 @@ const navegador = useNavigate()
                 </div>
 
                 <div className={Style.editarPerfil}>
-                    <button >Editar perfil <img src="src/Components/assets/icons/editor.png" alt="icon editor editar perfil" /></button>
+                    <button >Editar perfil <img src="/public/assets/icons/editor.png" alt="icon editor editar perfil" /></button>
                 </div>
             <p className={Style.estadoDoRestaurante}>{state.fechado ? "Aberto" : "Fechado"}</p>
             <p className={Style.abrirFechar}>{state.fechado ? "Click para Fechar" : "Click Para Abir"}</p>
