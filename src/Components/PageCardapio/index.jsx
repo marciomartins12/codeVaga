@@ -25,8 +25,9 @@ const CardapioRestaurante = () => {
                 <h2>{state.name}</h2>
                 <img src={state.img} alt="img do restaurante" />
             </div>
-            <div>
+            <div className={Style.item}>
                 {state.cardapio.map((item, i) => {
+                    
                     return (
                     <ExibeItem
                         key={i}

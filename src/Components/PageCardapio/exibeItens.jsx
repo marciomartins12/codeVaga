@@ -1,17 +1,23 @@
+import Style from "./pageCardapio.module.css";
 const ExibeItem = ({ item }) => {
     return (
-        <div>
+        <>
             {
-                item.itens.map((e) => {
+                item.itens.map((e, i) => {
                     return (
-                        <div>
-                            <h2>{e.nome}</h2>
+                        <div
+                            className={Style.itemCardapio}
+                            key={i}>
+                            <div>
+                                <img src={e.imgItem} alt="" />
+                                <h2>{e.nome}</h2>
+                            </div>
                             <button>editar Item</button>
                         </div>
                     )
                 })
             }
-        </div>
+        </>
     )
 }
 export default ExibeItem;

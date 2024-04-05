@@ -27,3 +27,36 @@
     height: auto;
     border-radius: 100%;
 }
+.item{
+    width: 100%;
+    display: flex;
+    flex-direction: column  ;
+    align-items: center;
+    gap: 1em;
+    margin-top: 3em ;
+    margin-bottom: 8em;
+}
+.itemCardapio{
+    border-radius: .55em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: auto;
+    width: 90%;
+    padding: 1.5em 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.itemCardapio div{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.itemCardapio img{
+    width: 48px;
+    height: auto;
+    border-radius: 100%;
+}
+.itemCardapio button{
+    border: none;
+
+}

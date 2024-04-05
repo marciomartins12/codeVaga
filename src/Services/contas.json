@@ -23,14 +23,17 @@
                 "categoria": "Bebidas",
                 "itens": [
                     {
+                        "imgItem": "https://github.com/marciomartins12.png",
                         "nome": "Coca-Cola",
                         "valor": 5.0
                     },
                     {
+                        "imgItem": "https://github.com/marciomartins12.png",
                         "nome": "Suco de Laranja",
                         "valor": 4.0
                     },
                     {
+                        "imgItem": "https://github.com/marciomartins12.png",
                         "nome": "Água Mineral",
                         "valor": 3.0
                     }
@@ -40,14 +43,17 @@
                 "categoria": "Pratos",
                 "itens": [
                     {
+                        "imgItem": "https://github.com/marciomartins12.png",
                         "nome": "Pizza Margherita",
                         "valor": 25.0
                     },
                     {
+                        "imgItem": "https://github.com/marciomartins12.png",
                         "nome": "Hambúrguer",
                         "valor": 20.0
                     },
                     {
+                        "imgItem": "https://github.com/marciomartins12.png",
                         "nome": "Salada Caesar",
                         "valor": 15.0
                     }
@@ -71,14 +77,17 @@
                 "categoria": "Bebidas",
                 "itens": [
                     {
+                        "img": "https://github.com/marciomartins12.png",
                         "nome": "Coca-Cola",
                         "valor": 5.0
                     },
                     {
+                        "img": "https://github.com/marciomartins12.png",
                         "nome": "Suco de Laranja",
                         "valor": 4.0
                     },
                     {
+                        "img": "https://github.com/marciomartins12.png",
                         "nome": "Água Mineral",
                         "valor": 3.0
                     }
@@ -88,14 +97,17 @@
                 "categoria": "Pratos",
                 "itens": [
                     {
+                        "img": "https://github.com/marciomartins12.png",
                         "nome": "Pizza Margherita",
                         "valor": 25.0
                     },
                     {
+                        "img": "https://github.com/marciomartins12.png",
                         "nome": "Hambúrguer",
                         "valor": 20.0
                     },
                     {
+                        "img": "https://github.com/marciomartins12.png",
                         "nome": "Salada Caesar",
                         "valor": 15.0
                     }

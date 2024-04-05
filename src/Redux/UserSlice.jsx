@@ -14,7 +14,8 @@ export const slice = createSlice({
         localizacao: "",
         avaliacao: "",
         fechado: true,
-        tipoPagamento : ""
+        tipoPagamento : "",
+       
     },
     reducers: {
         logar(state, { payload }) {
@@ -36,6 +37,7 @@ export const slice = createSlice({
                     avaliacao: contaEncontrada.avaliacao,
                     fechado: contaEncontrada.fechado,
                     tipoPagamento : contaEncontrada.tipoPagamento
+                   
                 }
             }
             return {
