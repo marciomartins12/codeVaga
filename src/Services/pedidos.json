@@ -10,6 +10,11 @@
                 "categoria": "Bebidas",
                 "item": "Coca-Cola",
                 "valor": 5.0
+            },
+            {
+                "categoria": "Pratos",
+                "item": "Ovo frito",
+                "valor": 5.0  
             }
         ],
         "aceitoPeloRestaurante": true,

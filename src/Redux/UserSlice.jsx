@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import contas from "../Services/contas.json"
+import contas from "../Services/contas.json";
+import pedidos from "../Services/pedidos.json";
 export const slice = createSlice({
     name: "user",
     initialState: {
@@ -14,13 +15,16 @@ export const slice = createSlice({
         localizacao: "",
         avaliacao: "",
         fechado: true,
-        tipoPagamento : "",
-       
+        tipoPagamento: "",
+        pedidos: []
+
     },
     reducers: {
         logar(state, { payload }) {
             const [email, senha, tipo] = payload;
-            const contaEncontrada = contas.find(conta => conta.email === email && conta.senha === senha && conta.tipoDeConta === tipo)
+            const contaEncontrada = contas.find(conta => conta.email === email && conta.senha === senha && conta.tipoDeConta === tipo);
+            const pedidosEncontrados = pedidos.filter((e) => e.emailRestaurante == contaEncontrada.email)
+            console.log(pedidos)
             if (contaEncontrada) {
                 localStorage.setItem("userCurrent", JSON.stringify([email, senha, tipo]));
                 return {
@@ -36,8 +40,8 @@ export const slice = createSlice({
                     localizacao: contaEncontrada.localizacao,
                     avaliacao: contaEncontrada.avaliacao,
                     fechado: contaEncontrada.fechado,
-                    tipoPagamento : contaEncontrada.tipoPagamento
-                   
+                    tipoPagamento: contaEncontrada.tipoPagamento,
+                    pedidos: pedidosEncontrados
                 }
             }
             return {

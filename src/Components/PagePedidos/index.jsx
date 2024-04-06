@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import Style from "./pagePedidos.module.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { logar } from "../../Redux/UserSlice";
+import Style from "./pagePedidos.module.css";
 
 
 const Pedidos = () => {
@@ -16,6 +16,7 @@ const Pedidos = () => {
             dispatch(logar([email, senha, tipo]));
         }
     }, []);
+    console.log(state)
     return (
         <section className={Style.containerCardapio}>
             <div className={Style.container}>
@@ -26,8 +27,40 @@ const Pedidos = () => {
                     <img src={state.img} alt="img do restaurante" />
                 </div>
                 <section>
-                    <h5>Pedidos</h5>
-                    <div>
+                    <h5 className={Style.pedidoTitulo}>Pedidos</h5>
+                    <div className={Style.containerPedido}>
+
+                        {
+                            state.pedidos.map((pedido, i) => {
+                                let contadorValue = 0;
+                                return (
+                                    <div className={Style.containerItem} key={i}>
+                                        <div>
+
+                                            {pedido.pedido.map((item, j) => {
+                                                contadorValue += item.valor;
+
+                                                return (
+                                                    <div className={Style.itemContainer} key={j}>
+
+                                                        <p>
+                                                            {item.item}
+                                                        </p>
+
+                                                    </div>
+                                                )
+                                            }
+                                            )}
+
+                                        </div>
+                                        <div>
+                                            Total R${contadorValue}
+                                        </div>
+                                        <button>ver Pedido</button>
+                                    </div>
+                                )
+                            })
+                        }
 
                     </div>
                 </section>
