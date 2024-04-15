@@ -33,7 +33,7 @@ const Pedidos = () => {
                         {
                             state.pedidos.map((pedido, i) => {
                                 let contadorValue = 0;
-                                return (
+                                return (    
                                     <div className={Style.containerItem} key={i}>
                                         <div>
 

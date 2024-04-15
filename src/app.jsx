@@ -13,9 +13,9 @@ const App = () => {
           <Route path='/' element={<PageLogin />} />
           <Route path='/homePage' element={<HomePage />}>
             <Route index element={<Perfil />} />
-            <Route path='pedidos' element={<Pedidos/>} />
-            <Route path='cardapioRestaurante' element={<CardapioRestaurante/>} />
-            <Route path='cardapioCliente' element={<>Cardapio Cliente</>}/>
+            <Route path='pedidos' element={<Pedidos />} />
+            <Route path='cardapioRestaurante' element={<CardapioRestaurante />} />
+            <Route path='cardapioCliente' element={<>Cardapio Cliente</>} />
           </Route>
         </Routes>
       </BrowserRouter>
