@@ -49,9 +49,7 @@ export const slice = createSlice({
                 senhaErrada: true
             }
         },
-        // adicionaTipoConta(state, { payload }) {
-        //     return { ...state, tipoDeConta: payload }
-        // }
+        
     }
 })
 

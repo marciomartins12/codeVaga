@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Perfil = () => {
     const dispatch = useDispatch()
     const state = useSelector(state => state.user);
-const navegador = useNavigate()
+    const navegador = useNavigate()
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem('userCurrent'));
         if (storedUser) {
@@ -17,14 +17,22 @@ const navegador = useNavigate()
     }, []);
     return (
         <section className={Style.containerPerfil}>
-            {state.tipoDeConta == "restaurante" ? <p className={Style.cabecalhoTipo}>Restaurante</p> : <p className={Style.cabecalhoTipo}>Cliente</p>}
+            <nav className={Style.cabecalhoSair}>
+                <p className={Style.cabecalhoTipo}>Restaurante</p>
+                <button
+                    onClick={() => {
+                        localStorage.clear();
+                        navegador("index");
+                    }}
+                >Sair</button>
+            </nav>
             <div className={Style.cabecalhoPerfil}>
                 <h2>{state.name}</h2>
                 <img src={state.img} alt="" />
             </div>
             <div className={Style.cabecalhoSegundo}>
                 <p>avaliações {state.avaliacao}</p>
-                <div onClick={()=> navegador('cardapio')}>
+                <div onClick={() => navegador('cardapio')}>
                     Cardápio
                     <p>{state.cardapio[0] ? state.cardapio[0].itens.length + state.cardapio[1].itens.length : <></>} itens</p>
                 </div>
@@ -32,7 +40,7 @@ const navegador = useNavigate()
 
             <div className={Style.containerSegundo}>
                 <h4>informações</h4>
-                <p  onClick={()=> navegador('cardapio')}>Cardapio</p>
+                <p onClick={() => navegador('cardapio')}>Cardapio</p>
             </div>
 
             <section className={Style.containerInfos}>
@@ -58,9 +66,9 @@ const navegador = useNavigate()
                 <div className={Style.editarPerfil}>
                     <button >Editar perfil <img src="/public/assets/icons/editor.png" alt="icon editor editar perfil" /></button>
                 </div>
-            <p className={Style.estadoDoRestaurante}>{state.fechado ? "Aberto" : "Fechado"}</p>
-            <p className={Style.abrirFechar}>{state.fechado ? "Click para Fechar" : "Click Para Abir"}</p>
-           
+                <p className={Style.estadoDoRestaurante}>{state.fechado ? "Aberto" : "Fechado"}</p>
+                <p className={Style.abrirFechar}>{state.fechado ? "Click para Fechar" : "Click Para Abir"}</p>
+
             </section>
         </section>
     )

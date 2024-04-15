@@ -16,7 +16,18 @@
     align-items: center;
 
 }
+.cabecalhoSair{
+    position: relative;
 
+}
+.cabecalhoSair button{
+    border: none;
+    background-color: antiquewhite;
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
 .cabecalhoPerfil h2 {
     text-transform: uppercase;
     font-weight: 700;

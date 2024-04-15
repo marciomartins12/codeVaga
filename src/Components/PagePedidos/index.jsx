@@ -20,7 +20,15 @@ const Pedidos = () => {
     return (
         <section className={Style.containerCardapio}>
             <div className={Style.container}>
-                <p className={Style.cabecalhoTipo}>Restaurante</p>
+                <nav className={Style.cabecalhoSair}>
+                    <p className={Style.cabecalhoTipo}>Restaurante</p>
+                    <button
+                    onClick={()=>{
+                        localStorage.clear();
+                        navegador("/");
+                    }}
+                    >Sair</button>
+                </nav>
 
                 <div className={Style.cabecalhoPerfil}>
                     <h2>{state.name}</h2>
@@ -33,7 +41,7 @@ const Pedidos = () => {
                         {
                             state.pedidos.map((pedido, i) => {
                                 let contadorValue = 0;
-                                return (    
+                                return (
                                     <div className={Style.containerItem} key={i}>
                                         <div>
 

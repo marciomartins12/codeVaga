@@ -18,6 +18,7 @@ const HomePage = () => {
     }, []);
     return (
         <section className={Style.containerHomepage}>
+            
             <Outlet />
 
             {state.tipoDeConta == 'restaurante' ?

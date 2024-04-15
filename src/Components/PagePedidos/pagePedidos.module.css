@@ -9,7 +9,18 @@
     background-color: antiquewhite;
     margin-bottom: 2em;
 }
+.cabecalhoSair{
+    position: relative;
 
+}
+.cabecalhoSair button{
+    border: none;
+    background-color: antiquewhite;
+    font-weight: 500;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
 .cabecalhoPerfil {
     display: flex;
     justify-content: space-around;

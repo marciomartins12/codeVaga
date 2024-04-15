@@ -19,8 +19,15 @@ const CardapioRestaurante = () => {
     }, []);
     return (
         <section className={Style.containerCardapio}>
-            <p className={Style.cabecalhoTipo}>Restaurante</p>
-
+            <nav className={Style.cabecalhoSair}>
+                    <p className={Style.cabecalhoTipo}>Restaurante</p>
+                    <button
+                    onClick={()=>{
+                        localStorage.clear();
+                        navegador("/");
+                    }}
+                    >Sair</button>
+                </nav>
             <div className={Style.cabecalhoPerfil}>
                 <h2>{state.name}</h2>
                 <img src={state.img} alt="img do restaurante" />
