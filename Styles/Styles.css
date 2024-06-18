@@ -43,16 +43,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
     border-radius: 1em;
 }
 .swiper-slide img {
-    max-width: 100%;
+    max-width: 60%;
+    height: auto;
+    border-radius: .55em;
     height: auto;
 }
   
-
-
 .conteiner{
     width: 100%;
     display: flex;
