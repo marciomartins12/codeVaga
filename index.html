@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adulto Conteudo</title>
+    <link rel="stylesheet" href="Styles/Reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="Styles/Styles.css">
+</head>
+<body>
+    <nav class="navBar">
+        <h1>Adu<span>l</span>tCon<span>tent</span></h1>
+        <div></div>
+    </nav>
+
+    <main class="conteiner">
+        <p class="selecioneAss">SELECIONE UMA ASSINATURA</p>
+        <div class="card">
+
+            <div class="card-container-one">
+                <h2>VITALÍCIA</h2>
+                <p>MELHOR OFERTA</p>
+            </div>
+
+            <div class="card-container-two">
+                <div class="container-precos">
+                    <div class="price">
+                        <span>R$18,00</span>
+                        <h3>R$10,00</h3>
+                    </div>
+                    <span class="dsc">41% OFF</span>
+                </div>
+                <p>pague uma vez e vai ser para vida toda.</p>
+
+                <a class="comprar" href="github.com/marciomartins12">Comprar agora</a>
+            </div>
+
+        </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="github.com/marciomartins12.png" alt="Image 1"></div>
+              <div class="swiper-slide"><img src="path/to/image2.jpg" alt="Image 2"></div>
+              <div class="swiper-slide"><img src="path/to/image3.jpg" alt="Image 3"></div>
+          
+            </div>
+          </div>
+          
+
+
+
+
+            <div class="last-div">
+                <h4>Como <span>funciona</span>:</h4>
+                <p>
+                    Ao adquirir a nossa assinatura vitalícia, você garante acesso exclusivo e permanente ao nosso conteúdo adulto premium. A assinatura é pessoal e intransferível, permitindo que apenas você desfrute dos benefícios. Para acessar o conteúdo, é necessário baixar o Telegram, um aplicativo simples e intuitivo. Após a confirmação do pagamento, você receberá um link de acesso ao nosso grupo privado no Telegram. Neste grupo, você encontrará conteúdo adulto exclusivo das celebridades mais famosas do Brasil e do mundo. Aproveite a experiência única e permanente com o nosso serviço!
+                </p>
+            </div>
+            </main>
+            <footer class="footer">
+                <p>&copy; <span id="currentYear"></span> Adulto Conteúdo. Todos os direitos reservados.</p>
+                <p>Desenvolvido por <a href="www.github.com/marciomartins12" target="_blank">DonaDev</a></p>
+            </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <script src="./app/main.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      slidesPerView: 1, 
+      spaceBetween: 2,
+    });
+  </script>
+  
+</body>
+</html>
