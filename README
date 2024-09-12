@@ -1,0 +1,35 @@
+# Executando os Códigos JavaScript no Console CMD
+
+Este projeto contém dois scripts em JavaScript: `Fibonacci.js` e `verifString.js`. 
+
+- **Fibonacci.js**: Verifica se um número pertence à sequência de Fibonacci.
+- **verifString.js**: Conta quantas letras "a" existem em uma string fornecida.
+
+Siga as instruções abaixo para executar cada um dos scripts diretamente no console CMD (Prompt de Comando) do Windows.
+
+## Pré-requisitos
+
+Antes de executar os códigos JavaScript, você precisa atender aos seguintes pré-requisitos:
+
+1. **Node.js instalado**: Node.js é necessário para executar os códigos no console do CMD. Verifique a instalação do Node.js digitando o comando abaixo no CMD:
+
+    node -v
+
+
+
+2. **executar o fibonacci**: 
+        node Fibonacci.js
+
+
+2. **executar o verifString**: 
+        node verifString.js
+
+
+
+
+### Explicação
+
+- **Sessões para cada script**: O README tem instruções específicas para os dois arquivos, explicando o que cada um faz e como executá-los.
+- **Passo a Passo Detalhado**: Cada passo é descrito claramente, garantindo que qualquer pessoa consiga entender e seguir as instruções.
+
+Caso precise de mais ajustes, estou à disposição!
